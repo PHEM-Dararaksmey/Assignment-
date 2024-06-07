@@ -110,13 +110,13 @@ public class CarInfoApplication implements CommandLineRunner {
 
 
 II Write SQL statment 
-1. Count each branch how many accounts do they have
+1. Count each branch how many accounts do they have in  CUST_ACCOUNT_INFO Table 
 ```SQL
     SELECT Branch_Code, COUNT(*) AS Number_of_Accounts
     FROM CUST_ACCOUNT_INFO
     GROUP BY Branch_Code;
 ```
-2. who have more than one account?
+2. who have more than one account in CUST_ACCOUNT_INFO Table.
 ```SQL
     SELECT Customer No
     FROM CUST_ACCOUNT_INFO
