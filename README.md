@@ -116,4 +116,18 @@ II Write SQL statment
     FROM CUST_ACCOUNT_INFO
     GROUP BY Branch_Code;
 ```
-    
+2. who have more than one account?
+```SQL
+    SELECT Customer No
+    FROM CUST_ACCOUNT_INFO
+    GROUP BY Customer No
+    HAVING COUNT(*) > 1;
+ ```
+3.Find customers who don’t have account yet?
+Identify customers present in CUSTOMER_INFO but not in CUST_ACCOUNT_INFO, indicating they don't have accounts yet.
+```SQL
+    SELECT c.Customer_No, c.Customer_Name
+    FROM CUSTOMER_INFO AS c
+    LEFT JOIN CUST_ACCOUNT_INFO AS a ON c.Customer_No = a.Customer_No
+    WHERE a.Customer_No IS NULL;
+ ```
