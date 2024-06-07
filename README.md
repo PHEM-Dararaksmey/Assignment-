@@ -1,4 +1,4 @@
-# Assignment-
+[](url)# Assignment-
 
 1. Back-end assingment
 
@@ -49,8 +49,8 @@ public class CarService {
 ```
 </pre>
 Create the interface called CarInfoApplication and Implement CommandLine Runner to execute the code when the Spring Boot application start in console.
-<pre>
-``` java
+
+```java
   package com.example.carinfo;
 
 import com.example.carinfo.CarService;
@@ -108,7 +108,8 @@ public class CarInfoApplication implements CommandLineRunner {
 }
 
 ```
-</pre>
 
 
-
+II Write SQL statment 
+1. Count each branch how many accounts do they have
+    
