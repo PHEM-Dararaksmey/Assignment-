@@ -9,7 +9,7 @@ Here's is my implement:
 -----------------------------------------------------------
 Create a class Called CarService to manage the car data, storing it in a 'HashMap'
 <pre>
-```java
+``` java
 package com.example.carinfo;
 
 import org.springframework.stereotype.Service;
@@ -50,7 +50,7 @@ public class CarService {
 </pre>
 Create the interface called CarInfoApplication and Implement CommandLine Runner to execute the code when the Spring Boot application start in console.
 <pre>
-```java
+``` java
   package com.example.carinfo;
 
 import com.example.carinfo.CarService;
