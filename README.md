@@ -78,7 +78,7 @@ export default {
 
 ```
 make change in the App.vue 
-```
+```vue
 <template>
   <div id="app">
     <AddCar />
