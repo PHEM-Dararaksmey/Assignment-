@@ -1,6 +1,124 @@
-[](url)# Assignment-
+[](url)# Assignment CHIP MONG BANK date 6/7/2024
+1.Frontend assingment
+I have Ceate  2 Vue components:
+1. Call AddCar for adding a car data into the backend
+```vue
+<template>
+  <div>
+    <input type="text" v-model="name" placeholder="Car name" />
+    <input type="number" v-model.number="wheels" placeholder="Number of wheels" />
+    <button @click="addCar">Add Car</button>
+  </div>
+</template>
 
-1. Back-end assingment
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      name: '',
+      wheels: 0
+    };
+  },
+  methods: {
+    async addCar() {
+      try {
+        await axios.post('http://localhost:8080/car', {
+          name: this.name,
+        });
+        this.name = '';
+        this.wheels = 0;
+        alert('Car added successfully!');
+      } catch (error) {
+        console.error('Error adding car:', error);
+        alert('Failed to add car. Please try again later.');
+      }
+    }
+  }
+};
+</script>
+
+```
+2.Called Get CarInfo to Display the information on the textbong.
+```vue
+    <template>
+  <div>
+    <input type="text" v-model="carName" placeholder="Enter car name" />
+    <button @click="getCarInfo">Get Car Info</button>
+    <div v-if="carInfo !== null">
+      <p>{{ carInfo }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      carName: '',
+      carInfo: null
+    };
+  },
+  methods: {
+    async getCarInfo() {
+      try {
+        const response = await axios.get(`http://localhost:8080/car/${this.carName}`);
+        this.carInfo = `${this.carName} has ${response.data} wheels.`;
+      } catch (error) {
+        console.error('Error getting car info:', error);
+        alert('Failed to get car info. Please try again later.');
+      }
+    }
+  }
+};
+</script>
+
+```
+make change in the App.vue 
+```
+<template>
+  <div id="app">
+    <AddCar />
+    <GetCarInfo />
+  </div>
+</template>
+
+<script>
+import AddCar from './components/AddCar.vue';
+import GetCarInfo from './components/GetCarInfo.vue';
+
+export default {
+  name: 'App',
+  components: {
+    AddCar,
+    GetCarInfo
+  }
+};
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+
+```
+
+<h3> PROBLEM :
+    I have a problem wiht RESTController, i can't add the data into the backend
+</h3>
+
+
+
+2. Backend assingment
 
 Here's is my implement:
 1. Create a Spring Boot Project.
