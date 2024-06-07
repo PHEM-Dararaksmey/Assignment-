@@ -8,7 +8,7 @@ Here's is my implement:
 3. Create a command-line-runner to handle user interactions.
 -----------------------------------------------------------
 Create a class Called CarService to manage the car data, storing it in a 'HashMap'
-<pre>
+
 ``` java
 package com.example.carinfo;
 
@@ -47,7 +47,6 @@ public class CarService {
     }
 }
 ```
-</pre>
 Create the interface called CarInfoApplication and Implement CommandLine Runner to execute the code when the Spring Boot application start in console.
 
 ```java
@@ -112,4 +111,9 @@ public class CarInfoApplication implements CommandLineRunner {
 
 II Write SQL statment 
 1. Count each branch how many accounts do they have
+```SQL
+    SELECT Branch_Code, COUNT(*) AS Number_of_Accounts
+    FROM CUST_ACCOUNT_INFO
+    GROUP BY Branch_Code;
+```
     
